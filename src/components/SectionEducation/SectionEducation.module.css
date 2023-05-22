@@ -1,0 +1,62 @@
+@import '../../styles/propertySets.css';
+
+/* Animation for the hero elements */
+
+.root {
+  @apply --educationSectionBackgroundImage;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  color: var(--matterColorLight);
+}
+
+.educationWrapper{
+  margin: 0px 36px;
+}
+
+.educationContent{
+  display: flex;
+  align-items: center;
+}
+
+.educationContent > div{
+  margin: 0px 0px 36px 0px;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.italic{
+  font-style: italic;
+}
+
+.educationContent h1{
+  margin-bottom: 1em;
+  font-size: 24px;
+  @media (--viewportMedium) {
+    font-size: 28px;
+  }
+}
+
+.educationContent p{
+  font-size: 16px !important;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  @media (--viewportMedium) {
+    font-size: 18px !important;
+  }
+}
+
+.button{
+  @apply --marketplaceButtonStyles;
+  margin-top: 36px;
+
+  animation-delay: 0.8s;
+
+  @media (--viewportMedium) {
+    display: inline-block;
+    width: 260px;
+  }
+}

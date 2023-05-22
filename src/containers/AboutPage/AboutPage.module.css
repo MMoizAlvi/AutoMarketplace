@@ -1,0 +1,208 @@
+@import '../../styles/propertySets.css';
+
+.pageTitle {
+  text-align: left;
+  color: var(--marketplaceColorLight);
+  border-bottom: 3px solid var(--highlightColor);
+  font-size: 21px;
+  width:max-content;
+ 
+  @media (--viewportMedium) {
+    font-size: 1.75em;
+  }
+}
+
+.paragraph{
+  font-size: 16px;
+  margin-top: 0px;
+
+  @media (--viewportMedium) {
+    font-size: 16px;
+  }
+
+}
+
+.subParagraph{
+  font-size: 16px;
+  margin-top: 0px;
+  font-weight: bolder;
+
+  @media (--viewportMedium) {
+    font-size: 16px;
+  }
+}
+
+.staticPageWrapper {
+  width: calc(100% - 48px);
+  max-width: 1056px;
+  margin: 24px auto;
+
+  @media (--viewportMedium) {
+    width: calc(100% - 72px);
+    margin: 72px auto;
+  }
+}
+
+.coverImage {
+  width: 100%;
+  height: 528px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin: 32px 0 40px;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (--viewportMedium) {
+    flex-wrap: nowrap;
+  }
+}
+
+.contentSide {
+  font-style: italic;
+
+  @media (--viewportMedium) {
+    width: 193px;
+    margin-right: 103px;
+    margin-top: 8px;
+  }
+}
+
+.contentMain {
+  width: 90%;
+  color: black;
+  @media (--viewportMedium) {
+    max-width: 650px;
+  }
+}
+
+.maintenanceListItems{
+  position:relative; 
+  left : 30px;
+  list-style: disc;
+
+  & li{
+    font-size: 16px;
+  }
+}
+
+.hereLink{
+  color:black;
+  border-bottom: 1px solid black;
+
+  &:hover{
+    border-bottom: none;
+  }
+}
+
+.founderDetails{
+  font-style: italic;
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+
+.founderEmail{
+  font-size: 16px;
+  margin-top: 0px;
+}
+
+.heading {
+  @apply --marketplaceH3FontStyles; 
+  padding-bottom: 5px;
+  text-align: left;
+  color: var(--marketplaceColorLight);
+  border-bottom: 3px solid var(--highlightColor);
+  font-size: 21px;
+  width:max-content;
+  margin-top: 19px;
+
+  @media (--viewportMedium) {
+    font-size: 1.75em;
+  }
+}
+
+@keyframes animation_userOwnership {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    top: -20px;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+  }
+}
+
+.animation {
+  animation-name: animation_userOwnership;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+
+  visibility: hidden;
+  opacity: 1;
+  position: relative;
+}
+
+.userOwnershipBtn
+{ 
+  @apply --marketplaceButtonStyles;
+  composes: animation;
+  animation-delay: 0.8s;
+  padding: 0;
+  min-height: 32px;
+  width:180px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  
+  @media (--viewportMedium) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.maintenancePlansBtn{
+  @apply --marketplaceButtonStyles;
+  composes: animation;
+  animation-delay: 0.8s;
+  padding: 0;
+  min-height: 32px;
+  width:209px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  
+  @media (--viewportMedium) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.rightArrow{
+  padding-left:5px;
+  height: 55px;
+  width:30px;
+  display: flex;
+}
+
+.buttonContainer{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.web3{
+  font-weight: bolder;
+  font-style: italic;
+  color: var(--marketplaceColor);
+  font-size: 16px;
+
+  @media (--viewportMedium) {
+    font-size: 18px;
+  }
+}

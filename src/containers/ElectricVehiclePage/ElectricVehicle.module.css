@@ -1,0 +1,62 @@
+@import '../../styles/propertySets.css';
+
+.pageTitle {
+  text-align: left;
+  font-size: 27px;
+  width:max-content;
+  margin-bottom: 14px;
+
+  @media (--viewportMedium) {
+    font-size: 1.75em;
+    margin-bottom: 0px;
+  }
+}
+
+.staticPageWrapper {
+  width: calc(100% - 48px);
+  max-width: 1056px;
+  margin: 24px auto;
+
+  @media (--viewportMedium){
+    width: calc(100% - 72px);
+    margin: 72px auto;
+  }
+}
+
+.span{
+  border-top: 4px solid var(--marketplaceColor);
+}
+
+.paragraph{
+  color: var(--matterColorAnti);
+  font-size: 18px;
+  font-weight: 550;
+}
+
+.image{
+  width: auto;
+  height: 235px;
+  margin: 11px 0 38px 0;
+
+ @media (--viewportMedium){
+   height: 460px;
+ }
+}
+
+.contentWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  
+  @media (--viewportMedium){
+    flex-wrap: nowrap;
+  }
+}
+
+.contentMain {
+  width: 90%;
+  color: black;
+
+  @media (--viewportMedium){
+    max-width: 650px;
+  }
+}

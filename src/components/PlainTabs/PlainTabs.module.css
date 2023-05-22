@@ -1,0 +1,31 @@
+.tabLabels {
+  display: flex;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+    background: transparent;
+  }
+
+  @media (--viewportMedium) {
+    flex-wrap: wrap;
+    row-gap: 15px;
+  }
+}
+
+.tabLabelItem {
+  padding: 3px 0;
+  margin-right: 18px;
+  font-size: 16px;
+  white-space: nowrap;
+  cursor: pointer;
+  & :last-child {
+    margin-right: 0;
+  }
+}
+
+.tabLabelItemActive {
+  border-bottom: 3px solid var(--marketplaceColorDark);
+  color: var(--marketplaceColor);
+}

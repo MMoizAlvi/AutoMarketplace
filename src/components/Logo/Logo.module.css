@@ -1,0 +1,12 @@
+.logoMobile {
+  height: 32px;
+}
+
+.logoDesktop{
+	height: 41px;
+  width: 70%;
+
+  @media(--viewportMedium){
+    height: 32px;
+  }
+}

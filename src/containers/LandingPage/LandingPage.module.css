@@ -1,0 +1,315 @@
+@import '../../styles/propertySets.css';
+
+.root {
+}
+
+/* heroContainer gives the height for SectionHero */
+/* Safari has a bug with vw padding inside flexbox. Therefore we need an extra div (container) */
+/* If you've lot of content for the hero, multiple lines of text, make sure to adjust min-heights for each media breakpoint accordingly */
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 180px;
+  height: 100%;
+  padding: 0;
+
+  @media (--viewportMedium) {
+    min-height: 250px;
+    height: 24vh;
+    max-height: none;
+  }
+
+  @media (--viewportLarge) {
+    max-height: 367px;
+    min-height: 150px;
+    height: calc(56vh - var(--topbarHeightDesktop));
+  }
+}
+
+.hero {
+  flex-grow: 1;
+  justify-content: flex-end;
+
+  @media (--viewportMedium) {
+    padding-bottom: 83px;
+  }
+
+  @media (--viewportLarge) {
+    justify-content: center;
+    padding-top: 60px;
+  }
+}
+
+.sections {
+  margin: 0;
+  padding-top: 1px;
+}
+
+.section {
+  overflow: auto;
+}
+
+/* Square corners for the last section if it's even */
+.section:nth-of-type(2n):last-of-type {
+  @media (--viewportMedium) {
+    border-radius: 4px 4px 0 0;
+  }
+}
+
+/* Every other section has a light background */
+.section:nth-of-type(2n) {
+  @media (--viewportMedium) {
+    border-radius: 4px;
+  }
+}
+
+.sectionContent {
+  margin: var(--LandingPage_sectionMarginTop) 24px 51px 24px;
+
+  @media (--viewportMedium) {
+    max-width: 100%;
+    margin: var(--LandingPage_sectionMarginTopMedium) 24px 60px 24px;
+  }
+
+  @media (--viewportLarge) {
+    max-width: 1128px;
+    padding: 0 36px 0 36px;
+    margin: var(--LandingPage_sectionMarginTopLarge) auto 93px auto;
+  }
+
+  @media (--viewportXLarge) {
+    max-width: 1056px;
+    padding: 0;
+  }
+}
+
+.sectionContentFirstChild {
+  composes: sectionContent;
+  margin-top: 3vh;
+}
+
+/* A bar on top of light sections */
+.section:nth-of-type(2n) .sectionContent::before {
+  background: var(--marketplaceColor);
+  content: '';
+  display: block;
+  width: 109px;
+  height: 6px;
+
+  /* Place the bar on top of .sectionContent top margin */
+  position: relative;
+  top: calc(-1 * var(--LandingPage_sectionMarginTop));
+
+  @media (--viewportMedium) {
+    width: 192px;
+    height: 8px;
+    top: calc(-1 * var(--LandingPage_sectionMarginTopMedium));
+  }
+
+  @media (--viewportLarge) {
+    top: calc(-1 * var(--LandingPage_sectionMarginTopLarge));
+  }
+}
+
+.lpContentWrapper {
+  width: 100%;
+  margin: auto;
+  max-width: 1300px;
+  height: 100%;
+}
+
+.lpContentWrapper h2{
+  margin: 24px;
+  font-size: 21px;
+  @media (--viewportMedium) {
+    font-size: 28px;
+  }
+}
+
+.promotedSectionTabMenu {
+  margin: 24px;
+}
+
+.sectionHowItWorks{
+  margin-top: 36px;
+}
+
+.categoryHeader span{
+  /* border-bottom: 10px solid var(--highlightColor); */
+}
+
+
+@keyframes animation_userOwnership {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    top: -20px;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+  }
+}
+
+.animation {
+  animation-name: animation_userOwnership;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+
+  visibility: hidden;
+  opacity: 1;
+  position: relative;
+}
+
+.userOwnershipBtn
+{ 
+  @apply --marketplaceButtonStyles;
+  composes: animation;
+  animation-delay: 0.8s;
+  padding: 0;
+  min-height: 32px;
+  width:180px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  
+  @media (--viewportMedium) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.rightArrow{
+  padding-left:5px;
+  height: 55px;
+  width:30px;
+  display: flex;
+}
+
+.heading{
+  background-color: var(--marketplaceColor);
+  border-radius: 4px;
+  color:white;
+  padding: 3px 7px;
+}
+
+.slider{
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  @media (--viewportMedium) {
+    max-width: 1300px;
+  }
+}
+
+.desktopSlidesView{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slider > div{
+  margin: 24px;
+}
+
+.slideContent{
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  @media (--viewportMedium) {
+    flex-direction: row;
+  }
+}
+
+.slideSection{
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  @media (--viewportMedium) {
+    flex: 1 0 50%;
+  }
+}
+
+.slideIcon img{
+  height: 45px;
+  margin-right: 1em;
+  @media (--viewportMedium) {
+    height: 72px;
+  }
+}
+
+.slideInfo h4{
+  @apply --marketplaceH3FontStyles;
+  margin: 0px;
+  color: var(--marketplaceColor);
+  @media (--viewportMedium) {
+    margin-top: 16px;
+  }
+}
+
+.slideInfo p{
+  margin: 0px;
+  font-size: 14px;
+  @media (--viewportMedium) {
+    margin-bottom: 16px;
+  }
+}
+
+.tokensIcon img, .videoplayerIcon img{
+  width: 100%;
+  height: auto;
+  @media (--viewportMedium) {
+    height: 250px;
+    width: auto;
+  }
+}
+
+.tokensSlideWrapper, .videoSlideWrapper{
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.tokensSlide, .videoSlide{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* CHANGED */
+  flex-direction: column;
+  max-width: 85%;
+  align-self: stretch;
+  justify-content: space-evenly;
+}
+
+.tokensSlide h4, .videoSlide h4{
+  @apply --marketplaceH3FontStyles;
+  margin: 0;
+  color: var(--marketplaceColor);
+}
+
+.tokensSlide p, .videoSlide p{
+  font-size: 14px;
+  margin: 5px 0px 0px 0px;
+}
+
+.banners{
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 92%;
+  height: 210px;
+  margin: 15px 50px 0 15px;
+  border-radius: 7px;
+
+  @media(--viewportMedium){
+    width: 96%;
+    height: 413px;
+    margin: 0 0 0 25px;
+  }
+}

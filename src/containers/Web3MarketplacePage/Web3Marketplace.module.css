@@ -1,0 +1,74 @@
+@import '../../styles/propertySets.css';
+
+.heading {
+  text-align: left;
+  color: var(--marketplaceColorLight);
+  border-bottom: 3px solid var(--highlightColor);
+  font-size: 17px;
+  width: max-content;
+ 
+  @media (--viewportMedium) {
+    font-size: 1.75em;
+  }
+}
+
+.paragraph{
+  font-size: 16px;
+  margin-top: 0px;
+
+  @media (--viewportMedium) {
+    font-size: 16px;
+  }
+
+}
+
+.staticPageWrapper {
+  width: calc(100% - 48px);
+  max-width: 1056px;
+  margin: 24px auto;
+
+  @media (--viewportMedium) {
+    width: calc(100% - 72px);
+    margin: 72px auto;
+  }
+}
+
+.coverImage {
+  width: 100%;
+  height: 528px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin: 32px 0 40px;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (--viewportMedium) {
+    flex-wrap: nowrap;
+  }
+}
+
+.contentMain {
+  width: 90%;
+  color: black;
+  @media (--viewportMedium) {
+    max-width: 650px;
+  }
+}
+
+.heading {
+  @apply --marketplaceH3FontStyles; 
+  padding-bottom: 5px;
+  text-align: left;
+  color: var(--marketplaceColorLight);
+  border-bottom: 3px solid var(--highlightColor);
+  font-size: 21px;
+  width:max-content;
+  margin-top: 19px;
+
+  @media (--viewportMedium) {
+    font-size: 1.75em;
+  }
+}

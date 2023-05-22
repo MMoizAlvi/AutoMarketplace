@@ -1,0 +1,226 @@
+@import '../../styles/propertySets.css';
+
+.root {
+  position: relative;
+  display: flex;
+  background-color: var(--marketplaceColor);
+  border-radius: 42px;
+
+  @media(--viewportMedium){
+    background-color: white;
+  }
+}
+
+.icon {
+  display: flex;
+  width: 24px;
+  align-self: stretch;
+  /*border-bottom: 2px solid var(--marketplaceColor);*/
+  background-color: var(--matterColorLight);
+}
+
+.input {
+  flex-grow: 1;
+  height: var(--LocationAutocompleteInput_inputHeight);
+  padding-left: 10px;
+  margin: 0;
+  line-height: unset;
+  border-bottom-width: 2px;
+  color: var(--matterColorLight);
+ 
+  /* Safari bugfix: without this Safari will print placeholder to a wrong place */
+  &::-webkit-input-placeholder {
+    line-height: normal;
+  }
+
+  &:hover,
+  &:focus {
+    border-bottom-color: var(--marketplaceColor);
+    outline: none;
+  }
+}
+
+.iconSvg {
+  margin: auto;
+}
+
+.iconSvgGroup {
+  stroke: var(--marketplaceColor);
+  stroke-width: 2.5px;
+
+  @media (--viewportMedium) {
+    stroke-width: 2px;
+  }
+}
+
+.iconSpinner {
+  margin: auto;
+  width: 23px;
+}
+
+.mobileInputRoot {
+  width: 100%;
+}
+
+.desktopInputRoot {
+  height: var(--topbarHeightDesktop);
+}
+
+.mobileIcon {
+  margin-left: 24px;
+  padding: 16px 18px 16px 0;
+
+  /* Borders */
+  border-bottom-width: var(--borderRadiusMobileSearch);
+
+  display: flex;
+  width: 62px;
+  align-self: stretch;
+  background-color: var(--marketplaceColor);
+  border-top-right-radius: 42px;
+  border-bottom-right-radius: 42px;
+}
+
+.mobileInput {
+  flex-grow: 1;
+
+  /* Font */
+  @apply --marketplaceH3FontStyles;
+  color: var(--matterColorLight);
+
+  /* Layout */
+  margin: 0 24px 0 0;
+  padding: 9px 13px 10px 31px;
+  height: var(--TopbarSearchForm_inputHeight);
+  line-height: unset;
+  font-size: 22px;
+  font-weight: normal;
+
+  /* Borders */
+  border: none;
+
+  /* Safari bugfix: without this Safari will print placeholder to a wrong place */
+  &::-webkit-input-placeholder {
+    line-height: normal;
+  }
+
+  &:hover,
+  &:focus {
+    /* border-bottom-color: var(--marketplaceColor); */
+    outline: none;
+  }
+}
+
+.desktopIcon {
+  height: var(--topbarHeightDesktop);
+  border: none;
+  padding-top: 3px;
+  display: flex;
+  width: 24px;
+  align-self: stretch;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.desktopInput {
+  flex-grow: 1;
+  /* Font */
+  @apply --marketplaceH3FontStyles;
+  color: var(--marketplaceColorLight);
+  height: var(--topbarHeightDesktop);
+  line-height: unset;
+  border: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 12px;
+  font-size: 16px;
+  
+  /* Search text gets ellipsis if it's too wide */
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+
+  &:hover,
+  &:focus {
+    /* border-bottom-color: var(--marketplaceColor); */
+    outline: none;
+  }
+
+  &:hover::placeholder,
+  &:focus::placeholder {
+    color: var(--matterColor);
+  }
+
+  /* Placeholder text might be too wide */
+  &::placeholder {
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    font-weight: var(--fontWeightMedium);
+    transition: var(--transitionStyleButton);
+  }
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 45px;
+  margin-right: -50px;
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: var(--fontWeightSemiBold);
+    font-size: 18px;
+  }
+}
+
+.searchButton{
+  background-color: var(--marketplaceColor);
+  color: white;
+  font-size: 16px;
+  border-bottom-right-radius: 45px;
+  border-top-right-radius: 45px;
+  width: 69px;
+  padding: 15px 0 0 6px;
+}
+
+.mobilePredictions {
+  position: absolute;
+  top: calc(var(--TopbarSearchForm_inputHeight) - var(--TopbarSearchForm_bottomBorder));
+  left: 0;
+  min-height: calc(
+    100vh -
+      calc(
+        var(--TopbarSearchForm_topbarMargin) + var(--TopbarSearchForm_inputHeight) -
+          var(--TopbarSearchForm_bottomBorder)
+      )
+  );
+  width: 100%;
+  padding-bottom: var(--locationAutocompleteBottomPadding);
+  background-color: var(--marketplaceColor);
+  border-bottom-left-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
+  box-shadow: var(--boxShadowPopup);
+  z-index: calc(var(--zIndexPopup) + 1);
+}
+
+.mobilePredictionsAttribution {
+  /* When using the Google Maps Places geocoder, the "Powered by Google"
+   text is hidden in Mobile Safari without giving some extra space to
+   it. */
+  margin-bottom: 100px;
+}
+
+.desktopPredictions {
+  position: absolute;
+  width: 100%;
+  padding-bottom: var(--locationAutocompleteBottomPadding);
+  top: 50px;
+  left: 0;
+  background-color: var(--marketplaceColor);
+  border-bottom-left-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
+  box-shadow: var(--boxShadowPopup);
+  z-index: calc(var(--zIndexPopup) + 1);
+
+  margin-top: calc(
+    var(--topbarHeightDesktop) - var(--TopbarSearchForm_inputHeight) +
+      var(--TopbarSearchForm_bottomBorder)
+  );
+  max-width: 434px;
+}

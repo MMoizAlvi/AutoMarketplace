@@ -1,0 +1,168 @@
+@import '../../styles/propertySets.css';
+
+/* Animation for the hero elements */
+
+@keyframes animationTitle {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    top: -20px;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+  }
+}
+
+/* Shared animation rules */
+.animation {
+  animation-name: animationTitle;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+
+  visibility: hidden;
+  opacity: 1;
+  position: relative;
+}
+
+.root {
+  /* @apply --backgroundImage; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-width: 1300px;
+  margin: auto;
+
+  /* Text positioning is done with paddings */
+}
+
+.heroContent {
+  margin: 0;
+/*
+  @media (--viewportMedium) {
+    margin: 0 7.5vw 0 7.5vw;
+  }*/
+
+  /* Special viewport for adjusting the heroContent's placement */
+  padding: 0 36px 120px 36px;
+  @media only screen and (min-width: 1025px) and (max-width: 1366px) {
+    padding: 0 36px 0 36px;
+  }
+
+  @media only screen and (min-width: 1367px) {
+    margin: 0 auto;
+    max-width: calc(1052px + 36px + 36px);
+    width: 100%;
+    padding: 0 36px 0 36px;
+  }
+}
+
+.heroMainTitle {
+  @apply --marketplaceHeroTitleFontStyles;
+  color: var(--matterColorDark);
+  composes: animation;
+  animation-delay: 0.5s;
+  font-weight: bold;
+  margin: 36px 0 0 0;
+  font-size: 27px;
+  & p{
+    margin-top: 0px;
+  }
+  @media (--viewportMedium) {
+    max-width: var(--SectionHero_desktopTitleMaxWidth);
+    margin: 25px 0 0 0;
+    font-size: 38px;
+  }
+}
+
+.heroSubTitle {
+  @apply --marketplaceH4FontStyles;
+  letter-spacing: 1.5px;
+  color: var(--matterColorAnti);
+  margin: 5px 0 32px 0;
+  composes: animation;
+  animation-delay: 0.65s;
+  font-weight: normal;
+  font-size: 16px;
+  & span{
+    color: var(--matterColorAnti);
+  }
+
+  @media (--viewportMedium) {
+    max-width: var(--SectionHero_desktopTitleMaxWidth);
+    margin: 0 0 47px 0;
+    font-weight: var(--fontWeightSemiBold);
+  }
+}
+
+.heroButton {
+  @apply --marketplaceButtonStyles;
+  composes: animation;
+
+  animation-delay: 0.8s;
+
+  @media (--viewportMedium) {
+    display: inline-block;
+    width: 180px;
+  }
+}
+
+.userOwnedMarketplaceButton {
+  @apply --marketplaceButtonStyles;
+  composes: animation;
+  margin-right: 20px;
+  border: 2px solid var(--matterColorLight);
+  background: var(--matterColorLight);
+  color: var(--marketplaceColor);
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: var(--matterColorNegative);
+    text-decoration: none;
+  }
+
+  animation-delay: 0.8s;
+
+  @media (--viewportMedium) {
+    display: inline-block;
+    width: 260px;
+  }
+}
+
+.searchLink {
+  flex-grow: 1;
+  height: 100%;
+}
+
+.search {
+  height: var(--topbarHeightDesktop);
+}
+
+.searchRoot svg{
+  stroke: var(--matterColorLight);
+}
+
+.searchRoot g{
+  stroke: var(--matterColor);
+}
+
+.searchRoot div:first-child{
+  height: 42px;
+  width: 0px;
+}
+
+.searchRoot input{
+  height: 53px;
+  border: 1px solid var(--matterColorLight);
+  background: var(--matterColorLight);
+}
+
+.carImage{
+  width:auto;
+  height: 325px;
+  padding-top: 50px;
+}

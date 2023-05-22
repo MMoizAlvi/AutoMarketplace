@@ -1,0 +1,34 @@
+@import '../../styles/propertySets.css';
+
+.newsletterWrapper{
+  margin: 36px;
+}
+
+.newsletterContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.newsletterContent h2{
+  margin: 0px !important;
+	font-size: 20px;
+	@media (--viewportMedium) {
+		font-size: 24px;
+	}
+}
+
+.newsletterContent > div{
+  margin: 0px;
+}
+
+.tlcmktiFrame{
+  border:none;
+}
+
+.tlcCommunity{
+	margin-left: 0px !important;
+	margin-right: 36px !important;
+  margin-top: 36px;
+}

@@ -1,0 +1,224 @@
+@import '../../styles/propertySets.css';
+
+.earningTokenTitle {
+  text-align: left;
+  color: var(--marketplaceColor);
+  font-size: 21px;
+  width:max-content;
+  @media (--viewportMedium) {
+    font-size: 1.75em;
+  }
+}
+
+.earningTokenTitleSpan{
+    border-bottom: 3px solid var(--highlightColor);
+}
+
+.paragraph{
+  font-size: 16px;
+  margin-top: 0px;
+  
+  @media (--viewportMedium){
+    font-size: 16px;
+  }
+}
+
+.note{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.ownershipRegulationTitle{
+    text-align: left;
+    color: var(--marketplaceColor);
+    font-size: 21px;
+    width:max-content;
+    @media (--viewportMedium) {
+      font-size: 1.75em;
+    }
+}
+
+.ownershipRegulationTitleSpan{
+    text-align: left;
+    border-bottom: 3px solid var(--highlightColor);
+}
+
+.transactionsHeading{
+    display: block;
+    background-color:  var(--marketplaceColor);
+    color:white;
+    padding: 3px;
+    text-align: center;
+    font-size: 21px;
+}
+
+.totalTransacted_container,
+.vendorRating_container,
+.newVendor_container,
+.youtubeContent_container,
+.totalTransactions_container {
+    display: flex;
+    width: max-content;
+    @media (--viewportMedium) {
+        display: flex;
+    }
+}
+
+.container_lists{
+    display: flex;
+    justify-content: space-between;
+}
+
+.containerRight_list{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.containerRight_list li{
+  font-size: 16px;
+}
+
+.containerLeft_list{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.containerLeft_list li{
+  font-size: 16px;
+}
+
+.transactionsContent{
+    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+.additionalTransactionsHeading{
+    margin-left: 29px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    @media (--viewportMedium) {
+        margin-left: 353px;
+    }
+}
+
+.additionalTransactedHeading{
+  margin-left: 128px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    @media (--viewportMedium) {
+        margin-left: 452px;
+    }
+}
+
+.additionalVendorHeading{
+    margin-left: 134px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    @media (--viewportMedium) {
+        margin-left: 457px;
+    }
+}
+
+.additionalNewVendorHeading{
+  margin-left: 73px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    @media (--viewportMedium) {
+        margin-left: 397px;
+    }
+}
+
+.additionalYoutubeHeading{
+    margin-left:124px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    @media (--viewportMedium) {
+        margin-left: 449px;
+    }
+}
+
+.totalTransactionsHeading{
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.totalTransacedValueHeading{
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.transactedHeading{
+    display: block;
+    background-color:  var(--marketplaceColor);
+    color:white;
+    text-align: center;
+    font-size: 21px;
+    padding: 3px;
+}
+
+.transactedTokenHeading{
+    margin-left: 153px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    @media (--viewportMedium) {
+        margin-left: 450px;
+    }
+}
+
+.staticPageWrapper {
+  width: calc(100% - 48px);
+  max-width: 1056px;
+  margin: 24px auto;
+
+  @media (--viewportMedium) {
+    width: calc(100% - 72px);
+    margin: 72px auto;
+  }
+}
+
+.coverImage {
+  width: 100%;
+  height: 528px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin: 32px 0 40px;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (--viewportMedium) {
+    flex-wrap: nowrap;
+  }
+}
+
+.contentSide {
+  font-style: italic;
+
+  @media (--viewportMedium) {
+    width: 193px;
+    margin-right: 103px;
+    margin-top: 8px;
+  }
+}
+
+.contentMain {
+  width: 100%;
+  color: black;
+  @media (--viewportMedium) {
+    max-width: 650px;
+  }
+}

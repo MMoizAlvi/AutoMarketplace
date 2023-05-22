@@ -1,0 +1,57 @@
+@import '../../styles/propertySets.css';
+
+.title {
+  @apply --marketplaceH1FontStyles;
+  margin-top: 0;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (--viewportMedium) {
+    flex-wrap: nowrap;
+  }
+}
+
+.contentMain {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+
+  @media (--viewportMedium) {
+    flex-direction: row;
+  }
+}
+
+.contentMain > div{
+  margin: 1em;
+}
+
+.subtitle {
+  @apply --marketplaceH3FontStyles;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.section{
+  display: flex;
+}
+
+.icon img{
+  width: 72px;
+  margin-right: 1em;
+  margin-top: 16px;
+}
+
+.info h4{
+  @apply --marketplaceH3FontStyles;
+}
+
+.createListingLink {
+  margin-top: 18px;
+
+  @media (--viewportMedium) {
+    margin-top: 24px;
+  }
+}
